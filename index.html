@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="data:image/jpeg;base64,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">
+</head>
+<body>
+    
+<header>
+    <div class="Nobel-nav">
+        <div class="container">
+            <div class="Nobel-head">
+                    <div class="nobel-left">
+                        <img src="https://nobelelektrik.az/img/logoo.png" alt="">
+                    </div>
+                    <div class="nobel-center">
+                        <span>Ana Səhifə </span>
+                        <span>Şirkət</span><i class="fa-solid fa-chevron-down"></i> 
+                        <span>Məhsullan</span> <i class="fa-solid fa-chevron-down"></i>
+                        <span>Xidmətlər</span> <i class="fa-solid fa-chevron-down"></i>
+                        <span>Layihələr</span>
+                        <span>Yeniliklər</span>
+                        <span>Əlaqə</span>
+                    </div>
+                    <div class="nobel-right">
+                        <span>Dili dəyiş</span>
+                        <span>Zəng sifarişi</span>
+                        <i class="fa-solid fa-earth-europe"></i> <br>
+                    </div>
+                    <div class="nobel-icon">
+                        <i class="fa-solid fa-arrow-rotate-left"></i> <br>
+                    </div>
+                </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="Nobel">
+        <div class="container">
+            <div class="Nobel-body">
+                <h1>15 ildən artıq təcrübəmizlə qurulmuş elektrik sahəsində ən yüksək keyfiyyətli xidmətlərə zəmanət veririk.</h1>
+                <a href="">Daha ətraflı</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="Info">
+            <div class="Info-text">
+                <h3> İllərin təcrübəsi</h3>
+                <p>15 il praktikada sübut olunmuş peşəkar fəaliyyət</p>
+            </div>
+            <div class="Info-text">
+                <h3>Mütəxəssis qayğısı</h3>
+                <p>Hər bir müştəriyə özəl diqqət və professional yanaşma</p>
+            </div>
+            <div class="Info-text">
+                <h3>Dəyişim qarantiyası</h3>
+                <p>Yüzlərlə müştəridən əldə etdiyimiz yüksək səviyyədə məmnuniyyət</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="All-section">
+    <div class="container">
+        <div class="All">
+            <div class="All-box">
+                <img src="https://nobelelektrik.az/uploads/posts/2022-06/1655114588_repair.png" alt="">
+                <h5>Avadanlıqlar</h5>
+            </div>
+            <div class="All-box">
+                <img src="https://nobelelektrik.az/uploads/posts/2022-06/1655114844_electrical-panel.png" alt="">
+                <h5>Elektrik Lövhələri və Avtomatika</h5>
+            </div>
+            <div class="All-box">
+                <img src="https://nobelelektrik.az/uploads/posts/2022-06/1655114916_lightbulb.png" alt="">
+                <h5>İşıqlandırma</h5>
+            </div>
+            <div class="All-box">
+                <img src="https://nobelelektrik.az/uploads/posts/2022-06/1655114935_socket.png" alt="">
+                <h5>Açar, elektrik yuvaları</h5>
+            </div>
+            <div class="All-box">
+                <img src="https://nobelelektrik.az/uploads/posts/2022-06/1655114970_pipe.png" alt="">
+                <h5>Xırdavat</h5>
+            </div>
+            <div class="All-box">
+                <img src="https://nobelelektrik.az/uploads/posts/2022-06/1655114982_usb-c-cable.png" alt="">
+                <h5>Kabel və Kabel Aksesuarları</h5>
+            </div>
+            <div class="All-box">
+                <img src="https://nobelelektrik.az/uploads/posts/2022-06/1655115050_heater.png" alt="">
+                <h5>İstilik sistemləri</h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="Official">
+            <div class="off-top">
+                <h3>Rəsmi distribütoru olduğumuz brendlər</h3>
+            </div>
+            <div class="off-bottom">
+                <div class="off-box">
+                    <img src="https://nobelelektrik.az/img/aksa-jenerator.png" alt="">
+                </div>
+                <div class="off-box">
+                    <img src="https://nobelelektrik.az/img/jett.jpeg" alt="">
+                </div>
+                <div class="off-box">
+                    <img src="https://nobelelektrik.az/img/nexansss.jpeg" alt="">
+                </div>
+                <div class="off-box">
+                    <img src="https://nobelelektrik.az/img/gevis.png" alt="">
+                </div>
+                <div class="off-box">
+                    <img src="https://nobelelektrik.az/img/mutlusann.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="Brands">
+            <div class="brands-top">
+                <h3>Brendlər</h3>
+            </div>
+            <div class="brands-bottom">
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/ref1.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/schneider-electric-vector-logo.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/ref3.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/wago.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/ref5.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/safak.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/erse.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/bemis.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/emas.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/pelsan.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/noass.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/onka.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/2mkablo.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/etk.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/cetinkaya.png" alt="">
+                </div>
+                <div class="brands-logo">
+                    <img src="https://nobelelektrik.az/img/entes-logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="Project">
+    <div class="container">
+        <div class="Project-all">
+            <div class="pro-top">
+                <h1>Layihələr</h1>
+            </div>
+            <div class="pro-bottom">
+                <div class="bottom-box">
+                    <div class="box-text">
+                        <h3>"Kalyon Holding"</h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-03/medium/1646381455_kalyon.jpeg" alt="">
+                </div>
+                <div class="bottom-box">
+                    <div class="box-text1">
+                        <h3>"SOCAR" Azneft İB</h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-03/medium/1646381526_azneft.jpeg" alt="">
+                </div>
+                <div class="bottom-box">
+                    <div class="box-text3">
+                        <h3>"Azpetrol Hotel"</h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-04/medium/1650711765_azp-1.png" alt="">
+                </div>
+                <div class="bottom-box">
+                    <div class="box-text4">
+                        <h3>"Dalğa Plaza"</h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-03/medium/1646136434_dalga-plaza-10_1.jpeg" alt="">
+                </div>
+                <div class="bottom-box">
+                    <div class="box-text5">
+                        <h3>"Ravy Tower"</h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-03/medium/1646381793_ravy.jpeg" alt="">
+                </div>
+                <div class="bottom-box">
+                    <div class="box-text6">
+                        <h3>"Yelo Bank"</h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-03/medium/1646136181_yelobank-a.jpeg" alt="">
+                </div>
+                <div class="bottom-box">
+                    <div class="box-text7">
+                        <h3>"Şirvan Şərabları" MMC</h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-03/medium/1646381859_sirvan-serablar.jpeg" alt="">
+                </div>
+                <div class="bottom-box">
+                    <div class="box-text8">
+                        <h3>"Balxurma" MMC</h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-04/medium/1650711877_balkhoorma.jpg" alt="">
+                </div>
+                <div class="bottom-box">
+                    <div class="box-text9">
+                        <h3>"İntercontinental Hotel Baku" </h3>
+                        <a href="">Ətraflı</a>
+                    </div>
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-03/medium/1646133543_329049128.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+<section id="News">
+    <div class="container">
+        <div class="news-all">
+            <div class="news-top">
+                <h1>Yeniliklər</h1>
+            </div>
+            <div class="news-bottom">
+                <div class="news-left">
+                    <div class="box">
+                        <img src="https://nobelelektrik.az/uploads/posts/2022-03/1646222207_campaign.jpeg" alt="">
+                        <p>Yenilik2</p>
+                    </div>
+                </div>
+                <div class="news-right">
+                    <div class="box">
+                    <img src="https://nobelelektrik.az/uploads/posts/2022-03/1646222162_campaign.jpeg" alt="">
+                    <p>Yeniliklər...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+<section id="discount">
+    <div class="discount-all">
+        <img src="https://nobelelektrik.az/img/call-to-action.png" alt="">
+        <h3>Sizə özəl güzəştli qiymət ?</h3>
+        <p>Qiymət sorğusu göndərərək ən qısa zamanda sizin üçün hesablanmış xüsusi təklifi əldə edin</p>
+        <a href="">Qiymət təklifi al 
+            <i class="fa-solid fa-right-long"></i>
+        </a>
+    </div>
+</section>
+<section id="info">
+    <div class="container">
+        <div class="info-all">
+            <div class="info-text">
+                <h5>Naviqasiya</h5>
+                <p>Ana səhifə</p>
+                <p>Şirkət haqqında</p>
+                <p>Məhsullar</p>
+                <p>Xidmətlər</p>
+                <p>Layihələr</p>
+                <p>Yeniliklər</p>
+                <p>Əlaqə</p>
+            </div>
+            <div class="info-text">
+                <h5>Şirkət</h5>
+                <p>Haqqımızda</p>
+                <p>Sertifikatlar</p>
+                <p>Komandamız</p>
+            </div>
+            <div class="info-text">
+                <h5>Məhsullar</h5>
+                <p>Avadanlıqlar</p>
+                <p>Elektrik Lövhələri və Avtomatika</p>
+                <p>İşıqlandırma</p>
+                <p>Açar, elektrik yuvaları</p>
+                <p>Xırdavat</p>
+                <p>Kabel və Kabel Aksesuarları</p>
+                <p>İstilik Sistemləri</p>
+            </div>
+            <div class="info-text">
+                <h5>Xidmətlər</h5>
+                <p>Servis</p>
+                <p>Elektrik Lövhələrinin Yığılması</p>
+            </div>
+            <div class="info-text">
+                <h5>Layihələr</h5>
+                <p>"Kalyon Holding"</p>
+                <p>"SOCAR" Azneft İB</p>
+                <p>"Azpetrol Hotel"</p>
+                <p>"Dalğa Plaza"</p>
+                <p>"Ravy Tower"</p>
+                <p>"Yelo Bank"</p>
+                <p>"Şirvan şərabları” MMC</p>
+                <p>""Balxurma" MMC</p>
+                <p>"İntercontinental Hotel Baku"</p>
+            </div>
+            <div class="info-text">
+                <h5>Əlaqə məlumatları</h5>
+                <p>Nərimanov rayonu, Əhməd Rəcəbli küçəsi 202, AZ1052, Bakı şəhəri, Azərbaycan</p>
+                <p>Elektrik Lövhələri və Avtomatika</p>
+                <p>info@nobelelektrik.az</p>
+                <p>(+994 12) 564 77 53</p>
+                <p>(+994 55) 252 03 50</p>
+                <p>(+994 50) 232 20 35</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+</section>
+<footer>
+    <div class="container">
+        <div class="site-footer">
+            <div class="foot-top">
+                <div class="foot-left">
+                    <img src="https://nobelelektrik.az/img/logoo.png" alt="">
+                </div>
+                <div class="foot-right">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="foot-body">
+                <div class="foot-body-left">
+                    <h5>AZ</h5>
+                    <h5>EN</h5>
+                </div>
+                <div class="foot-body-right">
+                <p>© Copyright 2022. Bütün hüquqları qorunur</p> <br>
+                <h4>Saytın hazırlanması: Jamal Samadov tərəfindən hazırlanıldı :)</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
